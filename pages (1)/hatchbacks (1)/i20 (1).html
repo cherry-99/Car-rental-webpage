@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CaRent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../main.css" />
+    <script src="../../main1.js"></script>
+</head>
+<body>
+
+        <header class="head">
+                <a href="../home.html" class="logo"><img src="../../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
+                <div id="headright">
+                    <a href="../login.html">Login</a>
+                    <a href="../signup.html">Signup</a>
+                </div>
+        </header>
+
+    <div class="topnav">
+        <a href="../home.html">Home</a>
+        <a class="drop" href="../cars.html">Cars</a>
+        <div class="dropcontent">
+                <a href="../cars.html#hatchback">Hatchback</a>
+                <a href="../cars.html#sedan">Sedan</a>
+                <a href="../cars.html#suv">SUV</a>
+                <a href="../cars.html#luxury">Luxury</a>
+        </div>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../policy.html">Policy</a>
+    </div>
+
+        <div>
+            <h1>Hundai i20</h1>
+            <img id="bigpic" src="Koala.jpg" height="500" width="500" alt="i20">
+            <p id="i20desc" class="dec">The i20 is a perfect hatchback for short trips in and around the city and also allows to move around traffic easily</p>
+            <p id="facts" class="desc">Here are some of the features: </p>
+            <ul class="desc">
+                    <li>Capacity : 1.4 lts</li>
+                    <li>Milage : 18 kmpl</li>
+                    <li>Top Speed : 165 kmph</li>
+                    <li>Fuel Type : Petrol</li>
+                    <li>Luggage space : Small</li>
+            </ul>    
+            <input type="button" value="Book Now" id="bnow" class="desc" onclick="BookNow('i20')">
+        </div>
+
+        <div id="bookingform" display='none'>
+                <div id="carpics">
+                        <img src="Koala.jpg" height="175" width="175" id='red' alt="Red">
+                        <img src="Koala.jpg" height="175" width="175" id='blue' alt="Blue">
+                        <img src="Koala.jpg" height="175" width="175" id='black' alt="Black">
+                        <img src="Koala.jpg" height="175" width="175" id='grey' alt="Grey">
+                        <img src="Koala.jpg" height="175" width="175" id='silver' alt="Silver">
+                </div>
+                <form action="abcd.php">
+                        <label for="ridestart"><b>Date to start ride</b></label>
+                        <input type="date" name="ridestart" id="begdate">
+
+                        <label for="rideend"><b>Date to finish ride</b></label>
+                        <input type="date" name="rideend" id="enddate">
+
+                        <label>Colour:&emsp;</label>
+                        <input type="text" list="colors" name="colrs" required>
+                        <datalist id="colors">
+                            <option value="Red">
+                            <option value="Blue">
+                            <option value="Black">
+                            <option value="Grey">
+                            <option value="Silver">
+                        </datalist>
+                        
+                        <button type="submit">Check Price</button>
+                </form>
+        </div>
+
+        <div id="cost">
+                <p id="pricecalc">The car charges are (no of days x cost per day) : </p>
+                <p id="inscoast">The insurance prices are :</p>
+                <p id="totcost">The Total amount payable is : </p>
+                <input type="button" value="Confirm" id="bookconf" onclick="">
+        </div>
+
+        <script>
+                document.getElementById("bookingform").style.display = "none";
+                document.getElementById("cost").style.display = "none";
+                function BookNow(car) {
+                        var x = document.getElementById("bookingform");
+                        x.style.display = "block";
+                }
+        </script>
+</body>
+</html>

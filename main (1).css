@@ -1,0 +1,49 @@
+.head{
+  overflow: hidden;
+  background-color: lightseagreen;
+  padding: 5px 10px;
+}
+.head a.logo {
+    font-size: 35px;
+    font-weight: bold;
+}
+.head a {
+    float: left;
+    color:rgb(28, 65, 102);
+    text-align: center;
+    text-decoration: none;
+}
+#headright a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+}
+#headright a:hover {
+   background-color:black;
+   color:#f1f1f1;
+}
+.topnav{
+  overflow: hidden;
+  background-color:black ;
+  padding: 5px 10px;
+}
+.topnav a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.topnav a:hover {
+    background-color:white;
+    color:black;
+}
