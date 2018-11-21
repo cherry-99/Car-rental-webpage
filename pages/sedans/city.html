@@ -15,25 +15,30 @@
                 <div id="headright">
                     <a href="../login.html">Login</a>
                     <a href="../signup.html">Signup</a>
+                    <a href="../../home.html">Logout</a>
                 </div>
         </header>
 
-    <div class="topnav">
-        <a href="../home.html">Home</a>
-        <a class="drop" href="../cars.html">Cars</a>
-        <div class="dropcontent">
-                <a href="../cars.html#hatchback">Hatchback</a>
-                <a href="../cars.html#sedan">Sedan</a>
-                <a href="../cars.html#suv">SUV</a>
-                <a href="../cars.html#luxury">Luxury</a>
-        </div>
-        <a href="../contact.html">Contact Us</a>
-        <a href="../policy.html">Policy</a>
-    </div>
-
+        <div class="navbar" id="navbar">
+                        <a href="../../home.html">Home</a>
+                        <a href="../tarrif.html">Tariffs</a>
+                        <div class="dropdown">
+                          <button class="dropbtn"> 
+                            <a href="../cars.html">Cars</a>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="../cars.html/#hatchback">Hatchbacks</a>
+                            <a href="../cars.html/#sedan">Sedans</a>
+                            <a href="../cars.html/#suv">SUVs</a>
+                            <a href="../cars.html/#luxury">Luxury Cars</a>
+                          </div>
+                        </div>
+                        <a href="../contact.html">Contact Us</a>
+                </div>
+<div id="content">
         <div>
-            <h1>Honda City</h1>
-            <img id="bigpic" src="Koala.jpg" height="500" width="500" alt="city">
+            <h1>Honda city</h1>
+            <img id="bigpic" src="city/red.jpg" height="500" width="500" alt="city">
             <p id="citydesc" class="dec">The city is a perfect hatchback for short trips in and around the city and also allows to move around traffic easily</p>
             <p id="facts" class="desc">Here are some of the features: </p>
             <ul class="desc">
@@ -46,15 +51,15 @@
             <input type="button" value="Book Now" id="bnow" class="desc" onclick="BookNow('city')">
         </div>
 
-        <div id="bookingform">
+        <div id="bookingform" display='none'>
                 <div id="carpics">
-                        <img src="Koala.jpg" height="175" width="175" id='red' alt="Red">
-                        <img src="Koala.jpg" height="175" width="175" id='blue' alt="Blue">
-                        <img src="Koala.jpg" height="175" width="175" id='black' alt="Black">
-                        <img src="Koala.jpg" height="175" width="175" id='grey' alt="Grey">
-                        <img src="Koala.jpg" height="175" width="175" id='silver' alt="Silver">
+                        <img src="city/red.jpg" height="175" width="175" id='red' alt="Red">
+                        <img src="city/blue.jpg" height="175" width="175" id='blue' alt="Blue">
+                        <img src="city/black.png" height="175" width="175" id='black' alt="Black">
+                        <img src="city/grey.jpg" height="175" width="175" id='grey' alt="Grey">
+                        <img src="city/silver.jpg" height="175" width="175" id='silver' alt="Silver">
                 </div>
-                <form action="abcd.php">
+                <div id="details">
                         <label for="ridestart"><b>Date to start ride</b></label>
                         <input type="date" name="ridestart" id="begdate">
 
@@ -71,24 +76,113 @@
                             <option value="Silver">
                         </datalist>
                         
-                        <button type="submit">Check Price</button>
-                </form>
+                        <button type="submit" onclick="calc(5)">Check Price</button>
+                </div>
         </div>
 
         <div id="cost">
                 <p id="pricecalc">The car charges are (no of days x cost per day) : </p>
                 <p id="inscoast">The insurance prices are :</p>
                 <p id="totcost">The Total amount payable is : </p>
-                <input type="button" value="Confirm" id="bookconf">
+                <a href="../checkout.html"><button>Confirm</button></a> 
         </div>
+</div>
         <script>
-                        document.getElementById("bookingform").style.display = "none";
-                        document.getElementById("cost").style.display = "none";
-                        function BookNow(car) {
-                                var x = document.getElementById("bookingform");
-                                x.style.display = "block";
+                document.getElementById("bookingform").style.display = "none";
+                document.getElementById("cost").style.display = "none";
+                function BookNow(car) {
+                        var x = document.getElementById("bookingform");
+                        x.style.display = "block";
+                }
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+                function myFunction() {
+                  if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                  } else {
+                    navbar.classList.remove("sticky");
+                  }
+                }
+                function calc(p) {
+                        var a=document.getElementById("begdate");
+                        var b=document.getElementById("enddate");
+                        sessionStorage.setItem("coll",a.value);
+                        sessionStorage.setItem("ret",b.value);
+                        var c;
+                        function parseDate(str) {
+                                    var mdy = str.split('-');
+                                    return new Date(mdy[0], mdy[1], mdy[2]);
+                                }
+                                function datediff(first, second) {
+                                    return Math.round((second-first)/(1000*60*60*24));
+                                }
+                        var days=datediff(parseDate(a.value), parseDate(b.value));
+                        var x = document.getElementById("cost");
+                        x.style.display = "block";
+                        var cost;
+                        var ins;
+                        switch(p) {
+                                case 1:
+                                        cost=65;
+                                        ins=15;
+                                        break;
+                                case 2:
+                                        cost=85;
+                                        ins=15;
+                                        break;
+                                case 3:
+                                        cost=75;
+                                        ins=15;
+                                        break;
+                                case 4:
+                                        cost=85;
+                                        ins=30;
+                                        break;
+                                case 5:
+                                        cost=85;
+                                        ins=30;
+                                        break;
+                                case 6:
+                                        cost=85;
+                                        ins=30;
+                                        break;
+                                case 7:
+                                        cost=100;
+                                        ins=45;
+                                        break;
+                                case 8:
+                                        cost=110;
+                                        ins=45;
+                                        break;
+                                case 9:
+                                        cost=100;
+                                        ins=45;
+                                        break;
+                                case 10:
+                                        cost=200;
+                                        ins=60;
+                                        break;
+                                case 11:
+                                        cost=220;
+                                        ins=60;
+                                        break;
+                                case 12:
+                                        cost=200;
+                                        ins=60;
+                                        break;
                         }
-                </script>
-
+                        a=document.getElementById("pricecalc");
+                        a.textContent+=cost+" x "+days+" = "+(cost*days);
+                        b=document.getElementById("inscoast");
+                        b.textContent+=ins+" x "+days+" = "+(ins*days);
+                        c=document.getElementById("totcost");
+                        c.textContent+=(ins*days)+(cost*days)+" ";
+                        var d=Math.floor((Math.random() * 100) + 1);
+                        sessionStorage.setItem("bId",d);
+                        var e=(ins*days)+(cost*days);
+                        sessionStorage.setItem("cost",e);
+                }
+        </script>
 </body>
 </html>

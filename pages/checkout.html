@@ -6,28 +6,35 @@
     <title>CaRent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
-    <script src="main.js"></script>
+    <script src="../main1.js"></script>
 </head>
 <body>
-        <header class="head">
-                <a href="../home.html" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
-                <div id="headright">
-                    <a href="login.html">Login</a>
-                    <a href="signup.html">Signup</a>
-                </div>
-        </header>
-    <div class="topnav">
-        <a href="../home.html">Home</a>
-        <a class="active" class="drop" href="cars.html">Cars</a>
-        <div class="dropcontent">
-            <a href="cars.html#hatchback">Hatchback</a>
-            <a href="cars.html#sedan">Sedan</a>
-            <a href="cars.html#suv">SUV</a>
-            <a href="cars.html#luxury">Luxury</a>
+
+    <header class="head">
+        <a href="#" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
+        <div id="headright">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
+    </header>
+
+    <div class="navbar" id="navbar">
+            <a href="../home.html">Home</a>
+            <a href="tarrif.html">Tariffs</a>
+            <div class="dropdown">
+              <button class="dropbtn"> 
+                <a href="cars.html">Cars</a>
+              </button>
+              <div class="dropdown-content">
+                <a href="cars.html/#hatchback">Hatchbacks</a>
+                <a href="cars.html/#sedan">Sedans</a>
+                <a href="cars.html/#suv">SUVs</a>
+                <a href="cars.html/#luxury">Luxury Cars</a>
+              </div>
+            </div>
+            <a href="pages/contact.html">Contact Us</a>
     </div>
-        <a href="contact.html">Contact Us</a>
-        <a href="policy.html">Policy</a>
-    </div>
+<div class="content">
 
     <div align='center'>
             <h1 id='confmsg'>Congragulations! Booking Confirmed!</h1>
@@ -43,11 +50,34 @@
         <p id='dateofcoll'>Date of collection : </p>
         <p id='dateofret'>Date car must be returned : </p>
     </div>
-
-
+</div>
     <script>
-        // function to add Users name and profile pic in header
-        // finction to add bookdeets
+        var x=document.getElementById('bookingid');
+        x.textContent+=sessionStorage.getItem("bId");
+        var y=document.getElementById('amt');
+        y.textContent+=sessionStorage.getItem("cost");
+        var z=document.getElementById('dateofcoll');
+        z.textContent+=sessionStorage.getItem("coll");
+        var a=document.getElementById('dateofret');
+        a.textContent+=sessionStorage.getItem("ret");
+        var b=document.getElementById('confmsg');
+
+        var x;
+        function changecolors() {
+            x = 1;
+            setInterval(change, 700);
+        }
+        function change() {
+            if (x === 1) {
+            color = "red";
+            x = 2;
+            } else {
+            color = "green";
+            x = 1;
+            }
+            document.getElementById('confmsg').style.color = color;
+        }
+        window.onload = changecolors;
     </script>
 </body>
 </html>

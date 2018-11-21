@@ -6,60 +6,78 @@
     <title>CaRent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
-    <script src="main.js"></script>
+    <script src="../main1.js"></script>
 </head>
 <body>
-        <header class="head">
-                <a href="../home.html" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
-                <div id="headright">
-                    <a href="login.html">Login</a>
-                    <a href="signup.html">Signup</a>
-                </div>
-        </header>
 
-        <div class="topnav">
+    <header class="head">
+        <a href="#" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
+        <div id="headright">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
+    </header>
+
+    <div class="navbar" id="navbar">
             <a href="../home.html">Home</a>
-            <a class="drop" href="cars.html">Cars</a>
-            <div class="dropcontent">
-                <a href="cars.html#hatchback">Hatchback</a>
-                <a href="cars.html#sedan">Sedan</a>
-                <a href="cars.html#suv">SUV</a>
-                <a href="cars.html#luxury">Luxury</a>
-        </div>
-            <a class="active" href="contact.html">Contact Us</a>
-            <a href="policy.html">Policy</a>
-        </div>
-
-        <div>
+            <a href="#">Tariffs</a>
+            <div class="dropdown">
+              <button class="dropbtn"> 
+                <a href="cars.html">Cars</a>
+              </button>
+              <div class="dropdown-content">
+                <a href="cars.html/#hatchback">Hatchbacks</a>
+                <a href="cars.html/#sedan">Sedans</a>
+                <a href="cars.html/#suv">SUVs</a>
+                <a href="cars.html/#luxury">Luxury Cars</a>
+              </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+    </div>
+<div class="content">
+        <div id="hello">
             <h1>Contact Us</h1>
             <p>Feel free to mail us, give us a ring, or come meet us whenever you want!!!</p>
         </div>
 
         <div id="mailid">
             <h2>Email us at : </h2>
-            <ul>
-                <li>carent.info@gmail.com</li>
-                <li>help.carent@gmail.com</li>
-            </ul>
+            
+                <p>carent.info@gmail.com</p>
+                <p>help.carent@gmail.com</p>
             <p>Note, usually takes 1-2 hours to get a reply</p>
         </div>
-
+        <div id="gap">
+                <hr id="linegap">
+        </div>
         <div id="phone">
             <h2>Call us on : </h2>
-            <ul>
-                <li>+915760447234</li>
-                <li>+915760447583</li>
-            </ul>
+            
+                <p>+915760447234</p>
+                <p>+915760447583</p>
             <p>24 hour helpline</p>
         </div>
-
+        <div id="gap">
+                <hr id="linegap">
+        </div>
         <div id="address">
             <h2>Meet us at : </h2>
-            <ul>
-                <li>No 36, 7th main, 5th cross, Vijaynagar,Bengaluru</li>
-                <li>No 18, 10th main, 3rd cross, Brigade Road,Bengaluru</li>
-            </ul>
+            <p>No 36, 7th main, 5th cross, Vijaynagar,Bengaluru</p>
+            <p>No 18, 10th main, 3rd cross, Brigade Road,Bengaluru</p>
             <p>Office hours: 7am to 11pm</p>
         </div>
+        </div>
+        <script>
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+                function myFunction() {
+                  if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                  } else {
+                    navbar.classList.remove("sticky");
+                  }
+                }
+            </script>
 </body>
 </html>

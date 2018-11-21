@@ -6,29 +6,35 @@
     <title>CaRent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
-    <script src="main.js"></script>
+    <script src="../main1.js"></script>
 </head>
 <body>
-        <header class="head">
-                <a href="../home.html" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
-                <div id="headright">
-                    <a href="login.html">Login</a>
-                    <a href="signup.html">Signup</a>
-                </div>
-        </header>
 
-        <div class="topnav">
+    <header class="head">
+        <a href="#" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
+        <div id="headright">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
+    </header>
+
+    <div class="navbar" id="navbar">
             <a href="../home.html">Home</a>
-            <a class="drop" href="cars.html">Cars</a>
-            <div class="dropcontent">
-                <a href="cars.html#hatchback">Hatchback</a>
-                <a href="cars.html#sedan">Sedan</a>
-                <a href="cars.html#suv">SUV</a>
-                <a href="cars.html#luxury">Luxury</a>
-        </div>
+            <a href="#">Tariffs</a>
+            <div class="dropdown">
+              <button class="dropbtn"> 
+                <a href="cars.html">Cars</a>
+              </button>
+              <div class="dropdown-content">
+                <a href="cars.html/#hatchback">Hatchbacks</a>
+                <a href="cars.html/#sedan">Sedans</a>
+                <a href="cars.html/#suv">SUVs</a>
+                <a href="cars.html/#luxury">Luxury Cars</a>
+              </div>
+            </div>
             <a href="contact.html">Contact Us</a>
-            <a class="active" href="policy.html">Policy</a>
-        </div>
+    </div>
+        <div class="content">
         <div id="tandc">
             <h1 align="center" >Terms and Conditions and Policy</h1>
         </div>
@@ -63,5 +69,18 @@
         <div id="msg">
             <h3 align='center'>Have a wondeful Trip!!!</h3>
         </div>      
+    </div>
+        <script>
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+                function myFunction() {
+                  if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                  } else {
+                    navbar.classList.remove("sticky");
+                  }
+                }
+            </script>
 </body>
 </html>

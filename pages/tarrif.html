@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CaRent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="../main1.js"></script>
+</head>
+<body>
+
+    <header class="head">
+        <a href="#" class="logo"><img src="../logo.png" height="40" width="65" alt="logo">&emsp;CaRent</a>
+        <div id="headright">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
+    </header>
+
+    <div class="navbar" id="navbar">
+            <a href="../home.html">Home</a>
+            <a href="#">Tariffs</a>
+            <div class="dropdown">
+              <button class="dropbtn"> 
+                <a href="cars.html">Cars</a>
+              </button>
+              <div class="dropdown-content">
+                <a href="cars.html/#hatchback">Hatchbacks</a>
+                <a href="cars.html/#sedan">Sedans</a>
+                <a href="cars.html/#suv">SUVs</a>
+                <a href="cars.html/#luxury">Luxury Cars</a>
+              </div>
+            </div>
+            <a href="contact.html">Contact Us</a>
+    </div>
+<div class="content">
+        <div id="tables">
+        <table class="table" id="table">
+            <caption>Hatchbacks</caption>
+            <tr>
+                <th>Model : </th>
+                <th>Per day cost : </th>
+                <th>Insurace per day : </th>
+            </tr>
+            <tr>
+                <td>Hyundai i20</td>
+                <td>65</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                    <td>Ford Figo</td>
+                    <td>85</td>
+                    <td>15</td>
+            </tr>
+            <tr>
+                    <td>Baleno</td>
+                    <td>75</td>
+                    <td>15</td>
+            </tr>
+        </table>
+        </div>
+
+        <div id="gap">
+            <hr id="linegap">
+        </div>
+
+        <div id="tables">
+        <table class="table" id="table">
+            <caption>Sedans</caption>
+            <tr>
+                <th>Model : </th>
+                <th>Per day cost : </th>
+                <th>Insurace per day : </th>
+            </tr>
+            <tr>
+                <td>Honda Amaze</td>
+                <td>85</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Maruti Ciaz</td>
+                <td>85</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Honda City</td>
+                <td>85</td>
+                <td>30</td>
+            </tr>
+        </table>
+        </div>
+
+        <div id="gap">
+                <hr id="linegap">
+        </div>
+
+        <div id="tables">
+        <table class="table" id="table">
+            <caption>SUVs</caption>
+            <tr>
+                <th>Model : </th>
+                <th>Per day cost : </th>
+                <th>Insurace per day : </th>
+            </tr>
+            <tr>
+                <td>Toyota Fortuner</td>
+                <td>100</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>Renault Duster</td>
+                <td>110</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>Ford Ecosport</td>
+                <td>100</td>
+                <td>45</td>
+            </tr>
+        </table>
+        </div>
+
+        <div id="gap">
+                <hr id="linegap">
+        </div>
+
+        <div id="tables">
+        <table class="table" id="table" >
+            <caption>Luxury Cars</caption>
+            <tr>
+                <th>Model : </th>
+                <th>Per day cost : </th>
+                <th>Insurace per day : </th>
+            </tr>
+            <tr>
+                <td>Audi A4</td>
+                <td>200</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>BMW 5 Series</td>
+                <td>220</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Mercedes GLA</td>
+                <td>200</td>
+                <td>60</td>
+            </tr>
+        </table>
+        </div>
+</div>
+    <div id="bknow">
+        <h3>Going on a short ride with friends, or a long trip with the entire family or just catching a movie or going to a 5 star restauraunt, we got a car for everry occasion!!!</h3>
+        <a href="cars.html" style='text-decoration:none;'><button id="booknowbtn">Book Now</button></a>  
+    </div>
+</div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
+</body>
+</html>

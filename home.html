@@ -18,123 +18,38 @@
         </div>
     </header>
 
-    <div class="topnav">
-        <a class="active" href="#">Home</a>
-        <a class="drop" href="pages/cars.html">Cars</a>
-        <div class="dropcontent">
-                <a href="pages/cars.html/#hatchback">Hatchback</a>
-                <a href="pages/cars.html/#sedan">Sedan</a>
-                <a href="pages/cars.html/#suv">SUV</a>
-                <a href="pages/cars.html/#luxury">Luxury</a>
-        </div>
-        <a href="pages/contact.html">Contact Us</a>
-        <a href="pages/policy.html">Policy</a>
+    <div class="navbar" id="navbar">
+            <a href="../home.html">Home</a>
+            <a href="#">Tariffs</a>
+            <div class="dropdown">
+              <button class="dropbtn"> 
+                <a href="pages/cars.html">Cars</a>
+              </button>
+              <div class="dropdown-content">
+                <a href="pages/cars.html/#hatchback">Hatchbacks</a>
+                <a href="pages/cars.html/#sedan">Sedans</a>
+                <a href="pages/cars.html/#suv">SUVs</a>
+                <a href="pages/cars.html/#luxury">Luxury Cars</a>
+              </div>
+            </div>
+            <a href="pages/contact.html">Contact Us</a>
     </div>
-
+<div class="content">
     <div>
         <!-- boxes and shit -->
     </div>
-
-    <div>
-        <table>
-            <caption>Hatchbacks</caption>
-            <tr>
-                <th>Model : </th>
-                <th>Per day cost : </th>
-                <th>Imsurace per day : </th>
-            </tr>
-            <tr>
-                <td>Hyundai i20</td>
-                <td>65</td>
-                <td>35</td>
-            </tr>
-            <tr>
-                    <td>Ford Figo</td>
-                    <td>85</td>
-                    <td>50</td>
-            </tr>
-            <tr>
-                    <td>Baleno</td>
-                    <td>75</td>
-                    <td>40</td>
-            </tr>
-        </table>
-
-        <table>
-            <caption>Sedans</caption>
-            <tr>
-                <th>Model : </th>
-                <th>Per day cost : </th>
-                <th>Imsurace per day : </th>
-            </tr>
-            <tr>
-                <td>Honda Amaze</td>
-                <td>85</td>
-                <td>55</td>
-            </tr>
-            <tr>
-                <td>Maruti Ciaz</td>
-                <td>85</td>
-                <td>55</td>
-            </tr>
-            <tr>
-                <td>Honda City</td>
-                <td>85</td>
-                <td>55</td>
-            </tr>
-        </table>
-
-        <table>
-            <caption>SUVs</caption>
-            <tr>
-                <th>Model : </th>
-                <th>Per day cost : </th>
-                <th>Imsurace per day : </th>
-            </tr>
-            <tr>
-                <td>Toyota Fortuner</td>
-                <td>100</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>Renault Duster</td>
-                <td>110</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>Ford Ecosport</td>
-                <td>100</td>
-                <td>65</td>
-            </tr>
-        </table>
-
-        <table>
-            <caption>Luxury Cars</caption>
-            <tr>
-                <th>Model : </th>
-                <th>Per day cost : </th>
-                <th>Imsurace per day : </th>
-            </tr>
-            <tr>
-                <td>Audi A4</td>
-                <td>200</td>
-                <td>80</td>
-            </tr>
-            <tr>
-                <td>BMW 5 Series</td>
-                <td>220</td>
-                <td>85</td>
-            </tr>
-            <tr>
-                <td>Mercedes GLA</td>
-                <td>200</td>
-                <td>90</td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <h3>Going on a short ride with friends, or a long trip with the entire family or just catching a movie or going to a 5 star restauraunt, we got a car for everry occasion!!!</h3>
-        <a href="pages/cars.html" id="booknowbtn">Book Now</a>
-    </div>
+</div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
 </body>
 </html>
